@@ -26,7 +26,6 @@ systemctl start nginx
 
 ### Install Java (JDK 11)
 ## JAVA INSTALLATION ON UBUNTU
-### JAVA:
 - Java is a programming language and computing platform first released by Sun Microsystems in 1995.
 - It has evolved from humble beginnings to power a large share of today’s digital world, by providing the reliable platform upon which many services and applications are built.
 - There are many applications and even some websites that will not function unless you have Java installed.
@@ -34,10 +33,48 @@ systemctl start nginx
 - The Java Virtual Machine is built right into your Java software download, part of the JRE, and helps run Java.
   
 ```sh
-sudo apt update -y
+sudo -i
+apt-get update -y
 apt-get install default-jre -y
 apt-get install default-jdk -y
 java -version
+apt install vim -y
+vim /etc/profile.d/jdk11.sh
+```
+Add the following lines to `jdk11.sh`:
+```sh
+export JAVA_HOME="/usr/lib/jvm/java-11.0.10"
+export PATH="$PATH:${JAVA_HOME}/bin"
+```
+Save the file and run:
+```sh
+echo $JAVA_HOME
+```
+If the above command does not work, reboot or restart the server once:
+```sh
+sudo reboot
+```
+Then, verify the PATH:
+```sh
+echo $PATH
+```
+
+### **Run a Basic Java Program**
+```sh
+vim demo.java
+```
+Add the following Java code:
+```java
+public class demo {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+```
+Save and compile the Java program:
+```sh
+javac demo.java  # To compile the program
+java demo        # To execute the program
 ```
 
 ### Install Python
