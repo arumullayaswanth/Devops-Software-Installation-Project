@@ -59,6 +59,7 @@ Log in using the configured username (`tomcat`) and password (`523182`).
 
 ---
 
+
 ## Step 7: Integrate Tomcat with Jenkins
 1. Open Jenkins.
 2. Go to **Manage Jenkins** > **Manage Plugins**.
@@ -66,8 +67,62 @@ Log in using the configured username (`tomcat`) and password (`523182`).
 4. Configure Tomcat credentials in **Manage Credentials**.
 5. Add a **Post-build action** to deploy artifacts to Tomcat.
 
+#
+
+# Configure Tomcat Credentials in Jenkins
+
+## Step 7.1: Open Jenkins Dashboard
+
+1. Log in to Jenkins.
+2. Click on `Manage Jenkins`.
+3. Navigate to `Credentials` > `System` > `Global credentials (unrestricted)`.
+
+## Step 7.2: Add Tomcat Credentials
+
+1. Click `Add Credentials`.
+2. Enter the following details:
+   - **Username:** `tomcat`
+   - **Password:** `523182`
+3. Click `Create`.
+
+## Step 7.3: Copy Tomcat Credential ID
+
+1. Go back to `Credentials`.
+2. Find the newly created Tomcat credentials.
+3. Copy the **Credential ID** for later use in Jenkins jobs.
+
 ---
+
+Your Apache Tomcat server is now installed and linked to Jenkins! 🚀
+
+
+## Step 8: Deploy Applications from Jenkins
+
+1. Create a new **Jenkins Job**.
+2. Configure it as a **Freestyle project** or **Pipeline**.
+3. Add a build step **Deploy to Container**.
+4. Provide the WAR file and target Tomcat URL.
+5. Build and verify the deployment.
+
+# Understanding Apache Tomcat
+
+Apache Tomcat is an open-source Java Servlet Container developed by the Apache Software Foundation (ASF). It allows you to run Java web applications and supports technologies like:
+
+- **Servlets**: Java programs that run on the server and handle requests.
+- **JSP (JavaServer Pages)**: Used to create dynamic web content.
+- **WebSockets**: Enables real-time communication.
+
+### Key Features
+
+- Lightweight and fast.
+- Supports Java EE specifications.
+- Secure and configurable.
+- Easily integrates with Jenkins for CI/CD.
+
+With these steps, Tomcat should be installed and ready for deployments via Jenkins. 🚀
 
 ## Conclusion
 You have successfully installed and configured Apache Tomcat with Jenkins. 🚀
+
+
 
