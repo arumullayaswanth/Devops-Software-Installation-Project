@@ -67,9 +67,8 @@ Log in using the configured username (`tomcat`) and password (`523182`).
 4. Configure Tomcat credentials in **Manage Credentials**.
 5. Add a **Post-build action** to deploy artifacts to Tomcat.
 
-#
 
-# Configure Tomcat Credentials in Jenkins
+## Configure Tomcat Credentials in Jenkins
 
 ## Step 7.1: Open Jenkins Dashboard
 
