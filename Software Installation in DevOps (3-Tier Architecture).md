@@ -56,7 +56,7 @@ Then, verify the PATH:
 echo $PATH
 ```
 
-### **Run a Basic Java Program**
+Run a Basic Java Program
 ```sh
 vim demo.java
 ```
