@@ -68,7 +68,7 @@ sudo systemctl status arangodb3
 sudo arangosh
 ```
 #### ArangoDB Installation Screenshot
-![ArangoDB Installation](Screenshot%202025-03-31%20150855.png)
+![ArangoDB Installation]([Screenshot%202025-03-31%20150855.png](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/4abe0b43ce9621ea4e67228d50d4fdfb55f2f58b/Pictures/ArangoDB-1.png))
 
 
 ## ✅ Summary of DevOps 3-Tier EC2 Architecture
