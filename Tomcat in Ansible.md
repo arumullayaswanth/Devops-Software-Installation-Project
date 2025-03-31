@@ -156,7 +156,7 @@ Apache Tomcat is an open-source implementation of Java Servlet, JavaServer Pages
    vim tomcat-users.xml
    ```
    ```sh
-   vim `context.xml
+   vim context.xml
    ```
    ```sh
    ansible-playbook tomcat.yml
