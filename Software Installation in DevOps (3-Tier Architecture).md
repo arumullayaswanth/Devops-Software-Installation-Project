@@ -11,8 +11,6 @@ systemctl start apache2
 ```
 
 ### Install Nginx
-## NODEJS INSTALLATION ON UBUNTU
-### NODEJS:
 Node.js is a server-side platform built on Google Chrome's JavaScript Engine (V8 Engine). Node.js was developed by Ryan Dahl in 2009, and its latest version is v0.10.36.
 
 ```sh
@@ -102,8 +100,6 @@ java Demo        # To execute the program
 ```
 
 ### Install Python
-## PYTHON INSTALLATION ON UBUNTU
-### PYTHON:
 - Python is a high-level, dynamic, and general-purpose programming language.
 - It was designed and developed by Python Software Foundation.
   
@@ -126,7 +122,6 @@ node -v
 ## 3️⃣ Database Server - MySQL, Percona, or ArangoDB
 
 ### Install Percona MySQL
-## PERCONA MYSQL INSTALLATION ON UBUNTU
 Percona Distribution for MySQL provides better performance and concurrency for even the most demanding workload. It delivers greater value to MySQL server users with optimized performance, greater performance scalability and availability, enhanced backups, and increased visibility. All Percona software is free and open source.
 
 
@@ -142,7 +137,6 @@ mysql -u root -p
 ```
 
 ### Install ArangoDB
-## ARANGO INSTALLATION ON UBUNTU
 ArangoDB is a native multi-model, open-source database with flexible data models for documents, graphs, and key-values. Build high-performance applications using a convenient SQL-like query language or JavaScript extensions.
 
 
