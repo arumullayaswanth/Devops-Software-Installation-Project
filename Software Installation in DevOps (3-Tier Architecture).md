@@ -76,6 +76,30 @@ Save and compile the Java program:
 javac demo.java  # To compile the program
 java demo        # To execute the program
 ```
+### **Install Java (JDK 17) on Ubuntu**
+```sh
+sudo apt update -y
+sudo apt install openjdk-17-jdk -y
+java -version
+```
+
+### **Run a Basic Java Program**
+```sh
+vim demo.java
+```
+Add the following Java code:
+```java
+public class Demo {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+```
+Save and compile the Java program:
+```sh
+javac Demo.java  # To compile the program
+java Demo        # To execute the program
+```
 
 ### Install Python
 ## PYTHON INSTALLATION ON UBUNTU
@@ -107,10 +131,13 @@ Percona Distribution for MySQL provides better performance and concurrency for e
 
 
 ```sh
+sudo apt update -y
 wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
 sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
-percona-release setup ps80
-sudo apt install percona-server-server
+sudo percona-release setup ps80
+sudo apt install percona-server-server -y
+sudo systemctl start mysql
+sudo systemctl enable mysql
 mysql -u root -p
 ```
 
