@@ -23,7 +23,6 @@ systemctl start nginx
 ## 2️⃣ Backend (Application Server) - Java, Python, or Node.js
 
 ### Install Java (JDK 11)
-## JAVA INSTALLATION ON UBUNTU
 - Java is a programming language and computing platform first released by Sun Microsystems in 1995.
 - It has evolved from humble beginnings to power a large share of today’s digital world, by providing the reliable platform upon which many services and applications are built.
 - There are many applications and even some websites that will not function unless you have Java installed.
