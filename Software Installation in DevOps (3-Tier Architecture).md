@@ -80,7 +80,7 @@ sudo apt install openjdk-17-jdk -y
 java -version
 ```
 
-### **Run a Basic Java Program**
+Run a Basic Java Program:
 ```sh
 vim demo.java
 ```
