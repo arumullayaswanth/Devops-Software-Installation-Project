@@ -75,7 +75,7 @@ sudo arangosh
 ![ArangoDB Installation](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/4abe0b43ce9621ea4e67228d50d4fdfb55f2f58b/Pictures/ArangoDB-5.png)
 ![ArangoDB Installation](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/4abe0b43ce9621ea4e67228d50d4fdfb55f2f58b/Pictures/ArangoDB-6.png)
 
-## 4️⃣ Access ArangoDB GUI
+## Access ArangoDB GUI
 
 ### **Check ArangoDB Service Status**
 ```sh
