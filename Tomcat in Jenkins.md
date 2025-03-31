@@ -31,7 +31,13 @@ sed -i '56  a\<role rolename="manager-gui"/>' apache-tomcat-9.0.98/conf/tomcat-u
 sed -i '57  a\<role rolename="manager-script"/>' apache-tomcat-9.0.98/conf/tomcat-users.xml
 sed -i '58  a\<user username="tomcat" password="523182" roles="manager-gui, manager-script"/>' apache-tomcat-9.0.98/conf/tomcat-users.xml
 ```
-
+add
+```sh
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <user username="tomcat" password="523182" roles="manager-gui, manager-script"/>
+</tomcat-users>
+```
 ---
 
 ## Step 4: Modify Context.xml
