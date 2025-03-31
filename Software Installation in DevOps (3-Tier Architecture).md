@@ -11,6 +11,10 @@ systemctl start apache2
 ```
 
 ### Install Nginx
+## NODEJS INSTALLATION ON UBUNTU
+### NODEJS:
+Node.js is a server-side platform built on Google Chrome's JavaScript Engine (V8 Engine). Node.js was developed by Ryan Dahl in 2009, and its latest version is v0.10.36.
+
 ```sh
 sudo apt update
 sudo apt install nginx -y
@@ -21,6 +25,14 @@ systemctl start nginx
 ## 2️⃣ Backend (Application Server) - Java, Python, or Node.js
 
 ### Install Java (JDK 11)
+## JAVA INSTALLATION ON UBUNTU
+### JAVA:
+- Java is a programming language and computing platform first released by Sun Microsystems in 1995.
+- It has evolved from humble beginnings to power a large share of today’s digital world, by providing the reliable platform upon which many services and applications are built.
+- There are many applications and even some websites that will not function unless you have Java installed.
+- The Java Virtual Machine is only one part of Java software that is involved in running an application.
+- The Java Virtual Machine is built right into your Java software download, part of the JRE, and helps run Java.
+  
 ```sh
 sudo apt update -y
 apt-get install default-jre -y
@@ -29,6 +41,11 @@ java -version
 ```
 
 ### Install Python
+## PYTHON INSTALLATION ON UBUNTU
+### PYTHON:
+- Python is a high-level, dynamic, and general-purpose programming language.
+- It was designed and developed by Python Software Foundation.
+  
 ```sh
 sudo apt-get update -y
 sudo apt-get install python3 -y
@@ -48,6 +65,10 @@ node -v
 ## 3️⃣ Database Server - MySQL, Percona, or ArangoDB
 
 ### Install Percona MySQL
+## PERCONA MYSQL INSTALLATION ON UBUNTU
+Percona Distribution for MySQL provides better performance and concurrency for even the most demanding workload. It delivers greater value to MySQL server users with optimized performance, greater performance scalability and availability, enhanced backups, and increased visibility. All Percona software is free and open source.
+
+
 ```sh
 wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
 sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
@@ -57,6 +78,11 @@ mysql -u root -p
 ```
 
 ### Install ArangoDB
+## ARANGO INSTALLATION ON UBUNTU
+ArangoDB is a native multi-model, open-source database with flexible data models for documents, graphs, and key-values. Build high-performance applications using a convenient SQL-like query language or JavaScript extensions.
+
+
+
 ```sh
 echo 'deb https://download.arangodb.com/arangodb34/DEBIAN/ /' | sudo tee /etc/apt/sources.list.d/arangodb.list
 wget -q https://download.arangodb.com/arangodb34/DEBIAN/Release.key -O- | sudo apt-key add -
