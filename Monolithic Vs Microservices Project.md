@@ -36,16 +36,17 @@
 ## Monolithic Architecture project Screenshot
 <table>
   <tr>
-    <td align="center">
+    <td align="center" style="background-color:#f0f8ff; padding:10px;">
       <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-1.png" width="90%">
-      <br><b>Monolithic Architecture Project - 1</b>
+      <br><b style="color:#1f75fe;">🔵 Monolithic Architecture - 1</b>
     </td>
-    <td align="center">
+    <td align="center" style="background-color:#fff0f5; padding:10px;">
       <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-2.png" width="90%">
-      <br><b>Monolithic Architecture Project - 2</b>
+      <br><b style="color:#e60000;">🔴 Monolithic Architecture - 2</b>
     </td>
   </tr>
 </table>
+
 
 
 
