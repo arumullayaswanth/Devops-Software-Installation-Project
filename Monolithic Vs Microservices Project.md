@@ -77,7 +77,7 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png" width="80%">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png" width="50%">
       <br><b>Microservice Architecture</b>
     </td>
   </tr>
