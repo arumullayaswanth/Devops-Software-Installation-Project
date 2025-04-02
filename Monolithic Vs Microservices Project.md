@@ -5,6 +5,19 @@
 </p>
 
 # Monolithic Architecture Project
+## Monolithic Architecture project Screenshot
+<table>
+  <tr>
+    <td align="center" style="background-color:#f0f8ff; padding:10px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-1.png" width="90%">
+      <br><b style="color:#1f75fe;">🔵 Monolithic Architecture - 1</b>
+    </td>
+    <td align="center" style="background-color:#fff0f5; padding:10px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-2.png" width="90%">
+      <br><b style="color:#e60000;">🔴 Monolithic Architecture - 2</b>
+    </td>
+  </tr>
+</table>
 
 ## 1. Architecture Planning
    - The architecture provides a structured plan for our project.
@@ -36,24 +49,21 @@
 ## 5. SSL Certificate Installation
    - After deployment, SSL certificates are installed to secure the application.
 
-## Monolithic Architecture project Screenshot
-<table>
-  <tr>
-    <td align="center" style="background-color:#f0f8ff; padding:10px;">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-1.png" width="90%">
-      <br><b style="color:#1f75fe;">🔵 Monolithic Architecture - 1</b>
-    </td>
-    <td align="center" style="background-color:#fff0f5; padding:10px;">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-2.png" width="90%">
-      <br><b style="color:#e60000;">🔴 Monolithic Architecture - 2</b>
-    </td>
-  </tr>
-</table>
 
 
 ---
 
 # Microservice Architecture Project
+## Microservice Architecture Project Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png" width="50%">
+      <br><b>Microservice Architecture</b>
+    </td>
+  </tr>
+</table>
 
 ## 1. Architecture Planning
    - Defines how microservices will interact and communicate.
@@ -72,15 +82,6 @@
    - SSL certificates are installed for secure communication.
 
 
-## Microservice Architecture Project Screenshots
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png" width="50%">
-      <br><b>Microservice Architecture</b>
-    </td>
-  </tr>
-</table>
 
 
