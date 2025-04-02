@@ -71,21 +71,16 @@
 ## 5. SSL Certificate Installation
    - SSL certificates are installed for secure communication.
 
-## Microservice Architecture project Screenshot
-
-
-[![Microservice Architecture](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png)](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png)
 
 ## Microservice Architecture Project Screenshots
 
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png" width="90%">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png" width="80%">
       <br><b>Microservice Architecture</b>
     </td>
   </tr>
 </table>
 
-<img src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/Pictures/compressed-image.png" width="50%">
 
