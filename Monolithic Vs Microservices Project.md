@@ -38,15 +38,17 @@
   table {
     width: 100%;
     border-collapse: collapse;
-  }
-  td {
-    padding: 10px;
     text-align: center;
   }
+  td {
+    border: 2px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
   img {
+    width: 100%;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    width: 90%; /* Adjust width as needed */
   }
 </style>
 
