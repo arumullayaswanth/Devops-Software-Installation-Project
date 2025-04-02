@@ -34,30 +34,19 @@
    - After deployment, SSL certificates are installed to secure the application.
 
 ## Monolithic Architecture project Screenshot
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-  }
-  td {
-    border: 2px solid #ddd;
-    padding: 10px;
-    background-color: #f9f9f9;
-  }
-  img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-</style>
-
 <table>
   <tr>
-    <td><img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-1.png"></td>
-    <td><img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-2.png"></td>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-1.png" width="90%">
+      <br><b>Monolithic Architecture Project - 1</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-2.png" width="90%">
+      <br><b>Monolithic Architecture Project - 2</b>
+    </td>
   </tr>
 </table>
+
 
 
 <p align="center">
