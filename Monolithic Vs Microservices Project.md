@@ -42,6 +42,10 @@
     <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-2.png" width="45%">
 </p>
 
+<p align="center">
+    <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-1.png" width="45%">
+    <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-2.png" width="45%">
+</p>
 
 ---
 
