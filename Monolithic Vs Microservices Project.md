@@ -71,5 +71,19 @@
 ## 5. SSL Certificate Installation
    - SSL certificates are installed for secure communication.
 
-#### Monolithic vs. Microservice Deployment Workflow Architecture Screenshot
-![Monolithic vs. Microservice Deployment Workflow](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/dce5648d723a521c18a45f5d78b59589896740f9/Pictures/Monolithic%20vs.%20Microservice%20Deployment%20Workflow.png)
+## Microservice Architecture project Screenshot
+
+
+[![Microservice Architecture](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png)](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png)
+
+## Microservice Architecture Project Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/fae883a16dd7f32e3afced8b79ec701cf9b11c3b/Pictures/Microservice%20Architecture.png" width="90%">
+      <br><b>Microservice Architecture</b>
+    </td>
+  </tr>
+</table>
+
