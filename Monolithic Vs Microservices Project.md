@@ -87,3 +87,5 @@
   </tr>
 </table>
 
+<img src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/Pictures/compressed-image.png" width="50%">
+
