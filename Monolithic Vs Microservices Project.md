@@ -33,6 +33,12 @@
 ## 5. SSL Certificate Installation
    - After deployment, SSL certificates are installed to secure the application.
 
+## Monolithic Architecture project Screenshot
+   - After deployment, SSL certificates are installed to secure the application.
+
+#### Monolithic vs. Microservice Deployment Workflow Architecture Screenshot
+![Monolithic Architecture project Screenshot]([https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/dce5648d723a521c18a45f5d78b59589896740f9/Pictures/Monolithic%20vs.%20Microservice%20Deployment%20Workflow.png](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f2ad6eb19e398ceb753d49fa59b87e40127e12cb/Pictures/Microservice%20Architecture%20Project-1.png))
+
 ---
 
 # Microservice Architecture Project
