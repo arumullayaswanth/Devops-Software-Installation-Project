@@ -1,3 +1,6 @@
+#### Monolithic vs. Microservice Deployment Workflow Architecture Screenshot
+![Monolithic vs. Microservice Deployment Workflow](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/dce5648d723a521c18a45f5d78b59589896740f9/Pictures/Monolithic%20vs.%20Microservice%20Deployment%20Workflow.png)
+
 # Monolithic Architecture Project
 
 ## 1. Architecture Planning
@@ -50,5 +53,5 @@
 ## 5. SSL Certificate Installation
    - SSL certificates are installed for secure communication.
 
-#### Microservice Architecture Screenshot
-![Microservice Architecture]()
+#### Monolithic vs. Microservice Deployment Workflow Architecture Screenshot
+![Monolithic vs. Microservice Deployment Workflow](https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/dce5648d723a521c18a45f5d78b59589896740f9/Pictures/Monolithic%20vs.%20Microservice%20Deployment%20Workflow.png)
