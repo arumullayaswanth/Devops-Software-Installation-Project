@@ -1,5 +1,16 @@
 # Install Apache Tomcat in Jenkins
-
+<table>
+  <tr>
+    <td align="center" style="background-color:#f0f8ff; padding:10px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/d08f8ca936c18e489df753fc012e18adf80d8568/Pictures/Install%20Apache%20Tomcat%20in%20Jenkins-1.png" width="90%">
+      <br><b style="color:#1f75fe;">🔵 Install Apache Tomcat in Jenkins - 1</b>
+    </td>
+    <td align="center" style="background-color:#fff0f5; padding:10px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/d08f8ca936c18e489df753fc012e18adf80d8568/Pictures/Install%20Apache%20Tomcat%20in%20Jenkins-2.png" width="90%">
+      <br><b style="color:#e60000;">🔴 Install Apache Tomcat in Jenkins - 2</b>
+    </td>
+  </tr>
+</table>
 ## Prerequisites
 - Jenkins is installed and running.
 - Java 17 (Amazon Corretto) is installed.
