@@ -1,4 +1,4 @@
-# Setting Up Jenkins in Docker
+# Setting Up installing Jenkins in Docker
 
 ## Step 1: Install Docker
 
