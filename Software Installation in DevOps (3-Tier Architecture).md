@@ -1,5 +1,10 @@
 # Software Installation in DevOps (3-Tier Architecture) on EC2 Ubuntu
 
+<p align="center">
+  <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/d0977558ba5174254e55c0cad5de5e71f672b501/Pictures/Software%20Installation%20in%20DevOps.png" width="80%">
+</p>
+
+
 ## 1️⃣ Frontend (Web Server) - Apache or Nginx
 
 ### Install Apache2
