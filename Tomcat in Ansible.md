@@ -16,7 +16,7 @@ Apache Tomcat is an open-source implementation of Java Servlet, JavaServer Pages
 ## Ansible Playbook: `tomcat.yml`
 
 ```yaml
-- hosts: all
+- hosts: dev
   tasks:
     - name: download tomcat from dlcdn
       get_url:
