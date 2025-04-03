@@ -13,6 +13,18 @@ Apache Tomcat is an open-source implementation of Java Servlet, JavaServer Pages
 
 ---
 
+<table>
+  <tr>
+    <td align="center" style="background-color:#f0f8ff; padding:10px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/56bb8c65d8f7ed903db71475984347c1c86c201a/Pictures/installing%20tomcat%20with%20Ansible-1.png" width="90%">
+      <br><b style="color:#1f75fe;">🔵 Install Apache Tomcat in Ansible - 1</b>
+    </td>
+    <td align="center" style="background-color:#fff0f5; padding:10px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/d0977558ba5174254e55c0cad5de5e71f672b501/Pictures/Software%20Installation%20in%20DevOps.png"" width="90%">
+      <br><b style="color:#e60000;">🔴 Install Apache Tomcat in Ansible - 2</b>
+    </td>
+  </tr>
+</table>
 ## Ansible Playbook: `tomcat.yml`
 
 ```yaml
