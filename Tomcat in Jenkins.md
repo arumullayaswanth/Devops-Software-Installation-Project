@@ -84,10 +84,9 @@ Log in using the configured username (`tomcat`) and password (`523182`).
 
 ## Step 7: Integrate Tomcat with Jenkins
 1. Open Jenkins.
-2. Go to **Manage Jenkins** > **Manage Plugins**.
-3. Install **Deploy to Container Plugin**.
-4. Configure Tomcat credentials in **Manage Credentials**.
-5. Add a **Post-build action** to deploy artifacts to Tomcat.
+2. Go to **Manage Jenkins** > **Plugins** > **Available Plugins**.
+3. Install **Deploy to Container Plugin**.> **Go back to the top page**
+
 
 
 ## Configure Tomcat Credentials in Jenkins
