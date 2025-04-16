@@ -99,7 +99,6 @@ ssh -i "my-Key pair.pem" ec2-user@<your-public-ip>
 
 ```bash
 sudo su -
-vim Splunk.sh
 ```
 ```bash
 vim Splunk.sh
