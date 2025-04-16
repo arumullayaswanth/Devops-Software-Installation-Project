@@ -570,6 +570,7 @@ python3 app.py
 
 
 # <span style="color:blue">Splunk Cloud Guide</span>
+# *PDF: [What is Splunk?](https://medium.com/@veerababu.narni232/what-is-splunk-04a79a2272c1)*
 
 ## <span style="color:green">What is Splunk?</span>
 
@@ -676,6 +677,6 @@ This guide aims to demonstrate how to install Splunk Cloud on an Amazon EC2 inst
 
 ---
 
-*Original article by Veerababu Narni: [What is Splunk?](https://medium.com/@veerababu.narni232/what-is-splunk-04a79a2272c1)*
+
 
 
