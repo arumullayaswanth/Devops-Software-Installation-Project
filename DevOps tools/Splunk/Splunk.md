@@ -71,3 +71,197 @@ Here's a more detailed breakdown of key aspects of a Splunk implementation:
 
 ### <span style="color: #F39C12;">Final Thoughts:</span>  
 While I haven’t worked directly with **Datadog** or **Splunk**, my experience with monitoring tools follows similar workflows. I am eager to learn and apply my skills to these platforms if given the opportunity.  
+
+
+
+# 🚀 Splunk Enterprise Setup on AWS EC2
+
+## ✅ Step 1: Launch EC2 Instance for Splunk Enterprise
+
+1. **Name and Tags:** Name = `Splunk`
+2. **AMI:** Amazon Linux 2 AMI (HVM), Kernel 5.10, SSD Volume Type
+3. **Instance Type:** t2.medium
+4. **Key Pair (Login):** `my-Key pair`
+5. **Network Settings (Firewall):** Allow **All Traffic** (sg-0b2a45ed3aad43c2a)
+6. **Click:** Launch Instance
+
+---
+
+## ✅ Step 2: Connect to EC2 Using SSH
+
+```bash
+ssh -i "my-Key pair.pem" ec2-user@<your-public-ip>
+```
+
+---
+
+## ✅ Step 3: Install Splunk Enterprise
+
+```bash
+sudo su -
+vim Splunk.sh
+```
+
+Paste the following into `Splunk.sh`:
+
+```bash
+wget -O splunk-9.3.1.rpm "https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm"
+yum install splunk-9.3.1.rpm -y
+cd /opt/splunk/bin/
+./splunk start --accept-license --answer-yes
+./splunk enable boot-start
+```
+
+Then run:
+
+```bash
+sh Splunk.sh
+```
+
+Set credentials:
+- Username: `admin`
+- Password: `yaswanth`
+
+---
+
+## ✅ Step 4: Access Splunk UI
+
+Open browser:
+```
+http://<your-ec2-public-ip>:8000
+```
+
+---
+
+## ✅ Step 5: Configure Splunk Disk Settings
+
+- Go to **Settings → Server Settings → General Settings**
+- Set: Pause indexing if disk space falls below: `500` MB
+
+---
+
+## ✅ Step 6: Launch EC2 for Splunk Forwarder
+
+Repeat steps with new instance (t2.micro is OK).
+
+---
+
+## ✅ Step 7: Install Splunk Forwarder
+
+```bash
+sudo su -
+vim splunkforwader.sh
+```
+
+Paste into `splunkforwader.sh`:
+
+```bash
+wget -O splunkforwarder-9.3.1.rpm "https://download.splunk.com/products/universalforwarder/releases/9.3.1/linux/splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm"
+yum install splunkforwarder-9.3.1.rpm -y
+cd /opt/splunkforwarder/bin/
+./splunk start --accept-license --answer-yes
+```
+
+Run:
+```bash
+sh splunkforwader.sh
+```
+
+Set credentials when prompted.
+
+---
+
+## ✅ Step 8: Configure Forwarder
+
+```bash
+cd /opt/splunkforwarder/bin/
+./splunk add forward-server <splunk-ec2-ip>:9997
+./splunk add monitor /var/log
+./splunk restart
+```
+
+---
+
+## ✅ Step 9: Enable Receiving on Splunk EC2
+
+```bash
+cd /opt/splunk/bin
+./splunk enable listen 9997
+./splunk restart
+```
+
+---
+
+# 🧪 Testing Methods
+
+## 🔹 Method 1: Apache HTTPD
+
+```bash
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+echo "✅ Splunk forwarder is now configured to forward data" > /var/www/html/index.html
+```
+
+In Splunk UI:
+- Go to **Search & Reporting → Data Summary → Sources**
+- Select: `httpd/accesslog`
+
+---
+
+## 🔹 Method 2: Python Logging
+
+### test.py
+
+```python
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("/var/log/my_python_app.log"),
+        logging.StreamHandler()
+    ]
+)
+logging.info("This is a success log message.")
+logging.error("This is an error log message.")
+```
+
+Run:
+```bash
+python3 test.py
+```
+
+### app.py
+
+```python
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("/var/log/my_python_app.log"),
+        logging.StreamHandler()
+    ]
+)
+logging.info("This is a success log message.")
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    logging.error("An error occurred: %s", e, exc_info=True)
+logging.info("This message will still log after the error.")
+```
+
+Run:
+```bash
+python3 app.py
+```
+
+In Splunk UI: View `my_python_app.log` in Data Summary.
+
+---
+
+## 🌐 Useful Link
+
+[Splunk Overview Medium Article](https://medium.com/@veerababu.narni232/what-is-splunk-04a79a2272c1)
+
