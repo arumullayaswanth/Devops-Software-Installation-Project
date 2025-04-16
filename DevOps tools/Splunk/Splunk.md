@@ -526,3 +526,132 @@ python3 app.py
 
 📘 You’ll now see the Python application logs including error traces.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# <span style="color:blue">Splunk Cloud Guide</span>
+
+## <span style="color:green">What is Splunk?</span>
+
+Splunk is an application designed to search and analyze data gathered from machines, devices, and virtually anything that sends data within your infrastructure. It transforms this data into a more human-readable format. For tech-savvy individuals, Splunk functions as a SIEM (Security Information and Event Management) system.
+
+## <span style="color:green">Splunk Cloud vs Splunk Enterprise</span>
+
+What's the difference? While this guide focuses on Splunk Cloud, understanding the distinction is beneficial. The primary difference is that Splunk Enterprise is hosted on your company's infrastructure or personal machine, whereas Splunk Cloud is the same software hosted in Splunk’s Cloud, with all hardware maintained by Splunk. Splunk Cloud reduces the time to production and decreases the cost of your SIEM.
+
+## <span style="color:green">Universal Forwarder</span>
+
+Universal Forwarders allow your machine to stream data to the receiver, which is an index in Splunk Cloud. These forwarders enable real-time traffic monitoring.
+
+## <span style="color:green">Purpose</span>
+
+This guide aims to demonstrate how to install Splunk Cloud on an Amazon EC2 instance and set up a forwarder from a web server of another instance to our Splunk server.
+
+## <span style="color:green">Installing Splunk</span>
+
+1. Navigate to [Splunk](https://www.splunk.com).
+2. In the top right, create an account.
+3. Once logged in, go to the 'Products' tab and select 'Splunk Cloud Platform'.
+4. Select 'Free Trial' and start the trial.
+5. You'll receive an email with login information and a URL to access your Splunk Cloud.
+6. Input your username and password, create a new password, and access your Splunk Cloud account.
+
+## <span style="color:green">Create a Splunk Index</span>
+
+1. In the Splunk Cloud console, go to 'Settings' > 'Indexes'.
+2. Click 'New Index' in the top right.
+3. Name it, set the maximum data size, and retention time.
+4. Save the index.
+
+## <span style="color:green">Create EC2 Instance</span>
+
+1. Access your AWS account and create an Amazon Linux 2 EC2 instance.
+2. Insert the following script into the user data:
+
+   ```bash
+   #!/bin/bash
+   yum update -y
+   yum install -y httpd.x86_64
+   systemctl start httpd.service
+   systemctl enable httpd.service
+   echo "Welcome To The Cloud" > /var/www/html/index.html
+   ```
+
+3. Ensure ports 80/443 and 22 are open.
+
+## <span style="color:green">Installing a Universal Forwarder</span>
+
+1. On your Splunk Cloud homepage, choose 'Universal Forwarder'.
+2. Follow the 5 steps provided.
+3. Step one: Download the Splunk Universal Forwarder suitable for your distribution (e.g., 64-bit .tgz package under Linux).
+4. Choose 'Download via Command Line' to get a script. Copy this and execute it in the CLI of your web server instance.
+5. SSH into your web server and run the `wget` command in the CLI.
+6. Untar the package:
+
+   ```bash
+   tar -zxvf splunkforwarder-9.0.1-82c987350fde-Linux-x86_64.tgz -C /opt
+   ```
+
+7. Download the Universal Forwarder credentials from the Splunk Cloud page to your local machine.
+8. Copy the credentials package to your EC2 instance:
+
+   ```bash
+   scp -i <key_pair> splunkclouduf.spl ec2-user@<EC2_DNS_name>:~/splunkcloudf.spl
+   ```
+
+9. SSH back into your instance and move the `splunkcloudf.spl` file into `/opt/splunkforwarder`.
+10. Navigate to `/opt/splunkforwarder/bin/` and start Splunk:
+
+    ```bash
+    sudo ./splunk enable boot-start
+    sudo ./splunk start --accept-license
+    ```
+
+11. You'll be prompted to create an admin username and password.
+12. Install the credentials package:
+
+    ```bash
+    sudo ./splunk install app /opt/splunkforwarder/splunkcloudf.spl
+    ```
+
+13. Restart the Splunk forwarder:
+
+    ```bash
+    sudo ./splunk restart
+    ```
+
+14. Add a monitor to your instance to specify where to send the data:
+
+    ```bash
+    sudo ./splunk add monitor /var/log
+    ```
+
+15. If you need to remove a monitor:
+
+    ```bash
+    sudo ./splunk remove monitor <path>
+    ```
+
+16. To search for your logs, return to the Splunk Cloud console and navigate to the 'Search & Reporting' app on the left.
+
+---
+
+*Original article by Veerababu Narni: [What is Splunk?](https://medium.com/@veerababu.narni232/what-is-splunk-04a79a2272c1)*
+
+
