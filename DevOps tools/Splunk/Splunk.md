@@ -194,19 +194,46 @@ Set credentials:
   ```bash
   ./splunk enable listen 9997
 
-## ✅ Step 4: Access Splunk UI
+## ✅ Step 4:Access the Splunk Web Interface
 
-Open browser:
-```
-http://<your-ec2-public-ip>:8000
-```
+# Splunk Web Interface Access & Configuration Guide
+
+1. Open a web browser (Chrome, Firefox, Edge, etc.).
+2. In the address bar, type the following URL:
+
+   ```
+   http://<your-public-server-ip>:8000
+   ```
+
+   **Example:**
+   ```
+   http://18.207.227.21:8000
+   ```
+
+3. You will be redirected to the Splunk Dashboard:
+   ```
+   http://18.207.227.21:8000/en-US/app/launcher/home
+   ```
 
 ---
 
 ## ✅ Step 5: Configure Splunk Disk Settings
 
-- Go to **Settings → Server Settings → General Settings**
-- Set: Pause indexing if disk space falls below: `500` MB
+1. From the Splunk dashboard, click on **Settings** in the top navigation.
+2. Under the **Server settings** section, click **General settings**.
+3. Find the field:
+   ```
+   Pause indexing if free disk space (in MB) falls below
+   ```
+4. Enter `500` into the field.
+5. Click **Save** to apply the changes.
+
+---
+
+**Note:** Make sure you have the proper permissions to change server settings in Splunk.
+
+
+
 
 ---
 
