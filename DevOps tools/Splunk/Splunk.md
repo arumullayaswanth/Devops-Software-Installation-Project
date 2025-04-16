@@ -306,7 +306,7 @@ A **Splunk Forwarder** is a lightweight agent used to collect and send data to a
 
 ---
 
-## ✅ Step 6: Splunk Universal Forwarder Setup Guide
+## ✅ Step 67: Splunk Universal Forwarder Setup Guide
 
 #### 1. Navigate to Splunk's bin Directory
 
@@ -399,6 +399,25 @@ Listening for Splunk data on TCP port 9997.
 ```
 
 ---
+
+---
+
+## 8. Login to Splunk Web Dashboard
+
+Open your browser and navigate to:
+
+👉 http://18.207.227.21:8000/en-US/app/launcher/home
+
+This takes you to the Splunk Dashboard.
+
+### Navigation Steps:
+
+- Go to ➡️ Splunk Dashboard  
+- Click on ➡️ Search & Reporting  
+- Then ➡️ Data Summary  
+- Choose ➡️ Source  
+- Select the desired log source to view logs
+
 
 # 🧪 Testing Methods
 
