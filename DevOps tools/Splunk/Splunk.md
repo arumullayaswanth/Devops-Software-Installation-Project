@@ -140,9 +140,9 @@ http://<your-ec2-public-ip>:8000
 
 ---
 
-## ✅ Step 6: Launch EC2 for Splunk Forwarder
+## ✅ Step 6: install Splunk Forwarder
+go to Splunk instance
 
-Repeat steps with new instance (t2.micro is OK).
 
 ---
 
