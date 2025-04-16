@@ -238,33 +238,78 @@ Set credentials:
 ---
 
 ## ✅ Step 6: install Splunk Forwarder
-go to Splunk instance
+
 
 
 ---
 
 ## ✅ Step 7: Install Splunk Forwarder
 
-```bash
-sudo su -
-vim splunkforwader.sh
-```
+# Installing Splunk Forwarder on EC2 Instance
 
-Paste into `splunkforwader.sh`:
+## What is a Splunk Forwarder?
+A **Splunk Forwarder** is a lightweight agent used to collect and send data to a Splunk indexer. It is commonly deployed on servers, devices, or endpoints to gather logs and metrics.
 
-```bash
-wget -O splunkforwarder-9.3.1.rpm "https://download.splunk.com/products/universalforwarder/releases/9.3.1/linux/splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm"
-yum install splunkforwarder-9.3.1.rpm -y
-cd /opt/splunkforwarder/bin/
-./splunk start --accept-license --answer-yes
-```
+---
 
-Run:
-```bash
-sh splunkforwader.sh
-```
+## Required Port
+**Port 9997** is used for data ingestion from Universal Forwarders.
 
-Set credentials when prompted.
+---
+
+## Step-by-Step Installation Guide
+
+1. SSH into your EC2 instance.
+
+2. Create a setup script file:
+   ```bash
+   cd
+   vim splunkforwader.sh
+   ```
+
+3. Inside `splunkforwader.sh`, add the following content:
+
+   ```bash
+   # Download Splunk Forwarder RPM package
+   wget -O splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/universalforwarder/releases/9.3.1/linux/splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm"
+
+   # Install downloaded rpm package
+   sudo yum install splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm -y
+
+   # Switch to Splunk Forwarder bin directory
+   cd /opt/splunkforwarder/bin/
+
+   # Start Splunk Forwarder with license agreement
+   sudo ./splunk start --accept-license --answer-yes
+
+   echo "Creating password seed file..."
+   # You will be prompted to enter credentials manually:
+   # - Administrator username: admin
+   # - Password (must meet criteria): yaswanth
+   # - Confirm Password: Yaswanth
+   # - Optionally change the management port to 8091
+
+   echo "✅ Splunk Forwarder setup complete!"
+   echo "✅ Splunk Forwarder is successfully started!"
+   ```
+
+4. Save the script and run it:
+   ```bash
+   sh splunkforwader.sh
+   ```
+
+---
+
+## Final Notes
+- Ensure port **9997** is open in your security groups and firewall.
+- Confirm that the Splunk Indexer is ready to receive data.
+
+
+
+
+
+
+
 
 ---
 
