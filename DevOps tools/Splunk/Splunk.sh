@@ -22,7 +22,7 @@ echo "Creating password seed file..."
 #Password must contain at least:
   # * 8 total printable ASCII character(s).
 #Please enter a new password: yaswanth
-#Please confirm new password: Yaswanth
+#Please confirm new password: yaswanth
 
 echo "✅ Splunk installation and setup complete!"
 echo "Login at http://localhost:8000 with username: $SPLUNK_USER and password: $SPLUNK_PASSWORD"
