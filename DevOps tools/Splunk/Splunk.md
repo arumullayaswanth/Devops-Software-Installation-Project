@@ -239,12 +239,6 @@ Set credentials:
 
 ## ✅ Step 6: install Splunk Forwarder
 
-
-
----
-
-## ✅ Step 7: Install Splunk Forwarder
-
 # Installing Splunk Forwarder on EC2 Instance
 
 ## What is a Splunk Forwarder?
@@ -287,13 +281,18 @@ A **Splunk Forwarder** is a lightweight agent used to collect and send data to a
    # - Administrator username: admin
    # - Password (must meet criteria): yaswanth
    # - Confirm Password: Yaswanth
-   # - Optionally change the management port to 8091
+   # - would you like to change ports? y
+   # - enter a new mgmt. port: 8091
 
    echo "✅ Splunk Forwarder setup complete!"
    echo "✅ Splunk Forwarder is successfully started!"
    ```
 
 4. Save the script and run it:
+   ```bash
+   cd /opt/splunkforwarder/bin/
+   ```
+
    ```bash
    sh splunkforwader.sh
    ```
@@ -305,30 +304,97 @@ A **Splunk Forwarder** is a lightweight agent used to collect and send data to a
 - Confirm that the Splunk Indexer is ready to receive data.
 
 
+---
 
+## ✅ Step 6: Splunk Universal Forwarder Setup Guide
 
+#### 1. Navigate to Splunk's bin Directory
 
-
-
+```bash
+cd /opt/splunk/bin
+```
 
 ---
 
-## ✅ Step 8: Configure Forwarder
+#### 2. Configure Forward Server
+
+Forward logs to a Splunk indexer by running:
 
 ```bash
-cd /opt/splunkforwarder/bin/
-./splunk add forward-server <splunk-ec2-ip>:9997
-./splunk add monitor /var/log
+./splunk add forward-server <SPLUNK_INDEXER_IP>:9997
+```
+
+#### Example:
+
+```bash
+[root@ip-172-31-84-123 bin]# ./splunk add forward-server 18.207.227.21:9997
+Warning: Attempting to revert the SPLUNK_HOME ownership  
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
+Splunk username: admin  
+Password:  
+Added forwarding to: 18.207.227.21:9997.
+```
+
+---
+
+## 3. Restart Splunk Forwarder
+
+```bash
 ./splunk restart
 ```
 
 ---
 
-## ✅ Step 9: Enable Receiving on Splunk EC2
+## 4. Add Log Path to Monitor
 
 ```bash
-cd /opt/splunk/bin
+./splunk add monitor /var/log
+```
+
+### Example Output:
+
+```bash
+[root@ip-172-31-84-123 bin]# ./splunk add monitor /var/log  
+Warning: Attempting to revert the SPLUNK_HOME ownership  
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
+Your session is invalid. Please login.  
+Splunk username: admin  
+Password:  
+Added monitor of '/var/log'.
+```
+
+---
+
+## 5. Restart Splunk Again
+
+```bash
+./splunk restart
+```
+
+⚠️ **Important:** Always restart Splunk after configuration changes.
+
+---
+
+## 6. Enable Listening on Port 9997
+
+```bash
 ./splunk enable listen 9997
+```
+
+### Example Output:
+
+```bash
+[root@ip-172-31-84-123 bin]# ./splunk enable listen 9997  
+Warning: Attempting to revert the SPLUNK_HOME ownership  
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
+Listening for Splunk data on TCP port 9997.
+```
+
+---
+
+## 7. Final Restart
+
+```bash
 ./splunk restart
 ```
 
