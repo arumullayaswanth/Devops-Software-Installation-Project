@@ -71,8 +71,23 @@ Here's a more detailed breakdown of key aspects of a Splunk implementation:
 
 ### <span style="color: #F39C12;">Final Thoughts:</span>  
 While I haven’t worked directly with **Datadog** or **Splunk**, my experience with monitoring tools follows similar workflows. I am eager to learn and apply my skills to these platforms if given the opportunity.  
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/Splunk%20Enterprise.png" width="80%">
+      <br><b> Splunk Enterprise </b>
+    </td>
+  </tr>
+</table>
 
-
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck.png" width="80%">
+      <br><b>architecture spluck </b>
+    </td>
+  </tr>
+</table>
 
 # 🚀 Splunk Enterprise Setup on AWS EC2
 
@@ -537,6 +552,15 @@ python3 app.py
 
 
 
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck%20cloud.png" width="80%">
+      <br><b>architecture spluck cloud </b>
+    </td>
+  </tr>
+</table>
 
 
 
