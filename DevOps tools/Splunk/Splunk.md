@@ -5,11 +5,11 @@ A successful Splunk implementation involves deploying the software, onboarding d
 Here's a more detailed breakdown of key aspects of a Splunk implementation:
 
 ## <span style="color: #3498DB; font-style: italic;">1. Planning and Preparation:</span>
-**Define Scope and Objectives:**Clearly outline what you want to achieve with Splunk (e.g., security monitoring, IT operations, business analytics).  
-**Assess Data Sources:**Identify the logs, events, and other data sources you need to ingest into Splunk.  
-**Determine Architecture:**Choose the appropriate Splunk deployment architecture (e.g., on-premises, cloud, hybrid) and scale it to meet your needs.  
-**Define Use Cases:**Identify specific use cases that Splunk will address, such as threat detection, performance monitoring, or compliance reporting.  
-**Plan for Data Collection:**Determine how data will be ingested into Splunk, including the use of forwarders, UDP, or other methods.  
+**Define Scope and Objectives:** Clearly outline what you want to achieve with Splunk (e.g., security monitoring, IT operations, business analytics).  
+**Assess Data Sources:** Identify the logs, events, and other data sources you need to ingest into Splunk.  
+**Determine Architecture:** Choose the appropriate Splunk deployment architecture (e.g., on-premises, cloud, hybrid) and scale it to meet your needs.  
+**Define Use Cases:** Identify specific use cases that Splunk will address, such as threat detection, performance monitoring, or compliance reporting.  
+**Plan for Data Collection:** Determine how data will be ingested into Splunk, including the use of forwarders, UDP, or other methods.  
 **Configure Indexing and Retention:** Set up indexing rules and retention policies to manage data storage and performance.  
 **Set up Monitoring Console:** Configure the monitoring console for single or distributed environments.  
 
