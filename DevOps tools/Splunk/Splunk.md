@@ -74,7 +74,7 @@ While I haven’t worked directly with **Datadog** or **Splunk**, my experience 
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/Splunk%20Enterprise.png" width="80%">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/Splunk%20Enterprise.png" width="180%">
       <br><b> Splunk Enterprise </b>
     </td>
   </tr>
@@ -83,7 +83,7 @@ While I haven’t worked directly with **Datadog** or **Splunk**, my experience 
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck.png" width="80%">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck.png" width="90%">
       <br><b>architecture spluck </b>
     </td>
   </tr>
@@ -556,7 +556,7 @@ python3 app.py
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck%20cloud.png" width="80%">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck%20cloud.png" width="50%">
       <br><b>architecture spluck cloud </b>
     </td>
   </tr>
