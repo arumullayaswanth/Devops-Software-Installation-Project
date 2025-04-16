@@ -553,17 +553,6 @@ python3 app.py
 
 
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck%20cloud.png" width="50%">
-      <br><b>architecture spluck cloud </b>
-    </td>
-  </tr>
-</table>
-
-
-
 
 
 
@@ -574,7 +563,7 @@ python3 app.py
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck%20cloud.png" width="50%">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck%20cloud.png" width="40%">
       <br><b>architecture spluck cloud </b>
     </td>
   </tr>
