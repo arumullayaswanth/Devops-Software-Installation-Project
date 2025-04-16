@@ -135,24 +135,21 @@ sudo ./splunk start --accept-license --answer-yes
 
 # Set admin credentials
 echo "Setting admin credentials..."
-cat > /opt/splunk/etc/system/local/user-seed.conf << EOL
-[user_info]
-USERNAME = admin
-PASSWORD = yaswanth
-EOL
+# Create password seed file for admin user
+#Create credentials for the administrator account.
+#Characters do not appear on the screen when you type in credentials.
+#Please enter an administrator username: admin
+#Password must contain at least:
+  # * 8 total printable ASCII character(s).
+#Please enter a new password: yaswanth
+#Please confirm new password: Yaswanth
 
-# Enable auto-start
-echo "Configuring Splunk to start on boot..."
-sudo ./splunk enable boot-start -systemd-managed 1
-
-# Completion message
 echo "✅ Splunk installation and setup complete!"
-echo "Access the web interface at: http://$(hostname -I | awk '{print $1}'):8000"
-echo "Username: admin"
-echo "Password: yaswanth"
+echo "Login at http://localhost:8000 with username: $SPLUNK_USER and password: $SPLUNK_PASSWORD"
 
-# Restart Splunk to apply changes
-sudo ./splunk restart
+# Enable Splunk to start automatically on system boot
+./splunk enable boot-start
+
 ```
 
 Then run:
@@ -160,12 +157,42 @@ Then run:
 ```bash
 sh Splunk.sh
 ```
-
 Set credentials:
 - Username: `admin`
 - Password: `yaswanth`
 
 ---
+
+
+# <span style="color: #FF5733;">🔌 Splunk Port Summary</span>
+
+## <span style="color: #3498DB; font-weight: bold;">Port 8089 (Management Port)</span>
+- **Purpose**: Splunk's internal management and remote communication
+- **Used for**:
+  - CLI operations
+  - API communications
+  - Distributed search management
+- **Security Note**: Should be firewalled in production environments
+
+## <span style="color: #2ECC71; text-decoration: underline;">Port 8000 (Web Port)</span>
+- **Purpose**: Web interface access
+- **Used for**:
+  - Splunk Web UI
+  - Dashboards and visualizations
+  - Search head functionality
+- **Default URL**: `http://<splunk_server>:8000`
+- **Security Note**: Should use HTTPS in production
+
+## <span style="color: #9B59B6; font-style: italic;">Port 9997 (Receiving Port)</span>
+- **Purpose**: Data ingestion from forwarders
+- **Used for**:
+  - Universal Forwarder communications
+  - Heavy Forwarder connections
+  - Data collection from remote sources
+- **Protocol**: TCP
+- **Configuration**:
+  ```bash
+  ./splunk enable listen 9997
 
 ## ✅ Step 4: Access Splunk UI
 
