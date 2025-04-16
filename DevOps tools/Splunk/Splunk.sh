@@ -6,8 +6,10 @@ ls
 
 # Install the Splunk RPM package using yum
 sudo yum install splunk-9.3.1-0b8d769cb912.x86_64.rpm -y 
+
 # Navigate to the Splunk binary directory
 cd /opt/splunk/bin/
+
 # Start Splunk and accept license terms
 sudo ./splunk start --accept-license --answer-yes
 
