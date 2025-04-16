@@ -306,7 +306,7 @@ A **Splunk Forwarder** is a lightweight agent used to collect and send data to a
 
 ---
 
-## ✅ Step 67: Splunk Universal Forwarder Setup Guide
+## ✅ Step 7: Splunk Universal Forwarder Setup Guide
 
 #### 1. Navigate to Splunk's bin Directory
 
@@ -419,29 +419,153 @@ This takes you to the Splunk Dashboard.
 - Select the desired log source to view logs
 
 
-# 🧪 Testing Methods
+# Splunk Universal Forwarder Setup Guide
 
-## 🔹 Method 1: Apache HTTPD
+## 1. Navigate to Splunk's bin Directory
 
 ```bash
-yum install httpd -y
-systemctl start httpd
-systemctl enable httpd
-echo "✅ Splunk forwarder is now configured to forward data" > /var/www/html/index.html
+cd /opt/splunk/bin
 ```
-
-In Splunk UI:
-- Go to **Search & Reporting → Data Summary → Sources**
-- Select: `httpd/accesslog`
 
 ---
 
-## 🔹 Method 2: Python Logging
+## 2. Configure Forward Server
 
-### test.py
+Forward logs to a Splunk indexer by running:
+
+```bash
+./splunk add forward-server <SPLUNK_INDEXER_IP>:9997
+```
+
+### Example:
+
+```bash
+[root@ip-172-31-84-123 bin]# ./splunk add forward-server 18.207.227.21:9997
+Warning: Attempting to revert the SPLUNK_HOME ownership  
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
+Splunk username: admin  
+Password:  
+Added forwarding to: 18.207.227.21:9997.
+```
+
+---
+
+## 3. Restart Splunk Forwarder
+
+```bash
+./splunk restart
+```
+
+---
+
+## 4. Add Log Path to Monitor
+
+```bash
+./splunk add monitor /var/log
+```
+
+### Example Output:
+
+```bash
+[root@ip-172-31-84-123 bin]# ./splunk add monitor /var/log  
+Warning: Attempting to revert the SPLUNK_HOME ownership  
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
+Your session is invalid. Please login.  
+Splunk username: admin  
+Password:  
+Added monitor of '/var/log'.
+```
+
+---
+
+## 5. Restart Splunk Again
+
+```bash
+./splunk restart
+```
+
+⚠️ **Important:** Always restart Splunk after configuration changes.
+
+---
+
+## 6. Enable Listening on Port 9997
+
+```bash
+./splunk enable listen 9997
+```
+
+### Example Output:
+
+```bash
+[root@ip-172-31-84-123 bin]# ./splunk enable listen 9997  
+Warning: Attempting to revert the SPLUNK_HOME ownership  
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
+Listening for Splunk data on TCP port 9997.
+```
+
+---
+
+## 7. Final Restart
+
+```bash
+./splunk restart
+```
+
+
+---
+
+## 8. Login to Splunk Web Dashboard
+
+Open your browser and navigate to:
+
+👉 http://18.207.227.21:8000/en-US/app/launcher/home
+
+This takes you to the Splunk Dashboard.
+
+### Navigation Steps:
+
+- Go to ➡️ Splunk Dashboard  
+- Click on ➡️ Search & Reporting  
+- Then ➡️ Data Summary  
+- Choose ➡️ Source  
+- Select the desired log source to view logs
+
+
+---
+
+## ✅ Step 9. Testing Method 1 – Using Apache httpd Logs
+
+### Step 1: SSH into the Splunk EC2 Instance
+
+```bash
+cd ~
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+echo "✅ Splunk forwarder is now configured to forward data" | sudo tee /var/www/html/index.html
+```
+
+### Step 2: Verify in Splunk
+
+- Open your browser and navigate to:  
+  👉 http://18.207.227.21:8000/en-US/app/launcher/home
+- Go to ➡️ Search & Reporting  
+- Click ➡️ Data Summary → Source → Click on `httpd/accesslog`
+
+📘 You’ll now see the Apache HTTPD access logs.
+
+---
+
+## 10. Testing Method 2 – Using Python Logging
+
+### Step 1: Create a Python Script
+
+Create a file named `test.py`:
 
 ```python
 import logging
+
+# Configure logging settings
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -450,19 +574,37 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
+
+# Example usage
 logging.info("This is a success log message.")
 logging.error("This is an error log message.")
 ```
 
-Run:
+Run the script:
+
 ```bash
 python3 test.py
 ```
 
-### app.py
+### Step 2: View in Splunk
+
+- Go to ➡️ Splunk Dashboard  
+- Click ➡️ Search & Reporting → Data Summary → Source → `python_app.log`
+
+📘 These are the Python application logs.
+
+---
+
+## 11. Additional Python Log Test – Error Handling
+
+### Step 1: Create another Python Script
+
+Create `app.py` with the following:
 
 ```python
 import logging
+
+# Configure logging settings
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -471,24 +613,29 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
+
+# Success log
 logging.info("This is a success log message.")
+
 try:
     result = 10 / 0
 except ZeroDivisionError as e:
     logging.error("An error occurred: %s", e, exc_info=True)
+
+# Additional success log
 logging.info("This message will still log after the error.")
 ```
 
-Run:
+Run it:
+
 ```bash
 python3 app.py
 ```
 
-In Splunk UI: View `my_python_app.log` in Data Summary.
+### Step 2: View Logs in Splunk
 
----
+- Go to ➡️ Splunk Dashboard  
+- Click ➡️ Search & Reporting → Data Summary → Source → `python_app.log`
 
-## 🌐 Useful Link
-
-[Splunk Overview Medium Article](https://medium.com/@veerababu.narni232/what-is-splunk-04a79a2272c1)
+📘 You’ll now see the Python application logs including error traces.
 
