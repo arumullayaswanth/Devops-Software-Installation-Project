@@ -101,15 +101,58 @@ ssh -i "my-Key pair.pem" ec2-user@<your-public-ip>
 sudo su -
 vim Splunk.sh
 ```
+```bash
+vim Splunk.sh
+```
 
 Paste the following into `Splunk.sh`:
 
 ```bash
-wget -O splunk-9.3.1.rpm "https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm"
-yum install splunk-9.3.1.rpm -y
+#!/bin/bash
+
+# Splunk Enterprise Installation Script
+# Version: 1.0
+# Description: Automates Splunk Enterprise installation on Linux
+
+# Download the Splunk RPM package
+echo "Downloading Splunk package..."
+wget -O splunk-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm"
+
+# Verify download
+echo "Verifying download..."
+ls -lh splunk-9.3.1-0b8d769cb912.x86_64.rpm
+
+# Install the Splunk RPM package
+echo "Installing Splunk..."
+sudo yum install splunk-9.3.1-0b8d769cb912.x86_64.rpm -y
+
+# Navigate to Splunk binary directory
 cd /opt/splunk/bin/
-./splunk start --accept-license --answer-yes
-./splunk enable boot-start
+
+# Start Splunk and accept license
+echo "Starting Splunk service..."
+sudo ./splunk start --accept-license --answer-yes
+
+# Set admin credentials
+echo "Setting admin credentials..."
+cat > /opt/splunk/etc/system/local/user-seed.conf << EOL
+[user_info]
+USERNAME = admin
+PASSWORD = yaswanth
+EOL
+
+# Enable auto-start
+echo "Configuring Splunk to start on boot..."
+sudo ./splunk enable boot-start -systemd-managed 1
+
+# Completion message
+echo "✅ Splunk installation and setup complete!"
+echo "Access the web interface at: http://$(hostname -I | awk '{print $1}'):8000"
+echo "Username: admin"
+echo "Password: yaswanth"
+
+# Restart Splunk to apply changes
+sudo ./splunk restart
 ```
 
 Then run:
