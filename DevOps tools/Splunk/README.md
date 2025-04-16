@@ -208,7 +208,7 @@ Set credentials:
   ```bash
   ./splunk enable listen 9997
 
-## ✅ Step 4:Access the Splunk Web Interface
+## ✅ Step 4: Access the Splunk Web Interface
 
 # Splunk Web Interface Access & Configuration Guide
 
@@ -571,6 +571,16 @@ python3 app.py
 
 # <span style="color:blue">Splunk Cloud Guide</span>
 # *PDF: [What is Splunk?](https://medium.com/@veerababu.narni232/what-is-splunk-04a79a2272c1)*
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/9f593ca56dfa16423dd10a56851ba8480e8419fc/Pictures/architecture%20spluck%20cloud.png" width="50%">
+      <br><b>architecture spluck cloud </b>
+    </td>
+  </tr>
+</table>
+
+
 
 ## <span style="color:green">What is Splunk?</span>
 
