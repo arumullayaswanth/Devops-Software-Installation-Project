@@ -306,6 +306,7 @@ A **Splunk Forwarder** is a lightweight agent used to collect and send data to a
 
 ---
 
+
 ## ✅ Step 7: Splunk Universal Forwarder Setup Guide
 
 #### 1. Navigate to Splunk's bin Directory
@@ -337,7 +338,7 @@ Added forwarding to: 18.207.227.21:9997.
 
 ---
 
-## 3. Restart Splunk Forwarder
+#### 3. Restart Splunk Forwarder
 
 ```bash
 ./splunk restart
@@ -345,13 +346,13 @@ Added forwarding to: 18.207.227.21:9997.
 
 ---
 
-## 4. Add Log Path to Monitor
+#### 4. Add Log Path to Monitor
 
 ```bash
 ./splunk add monitor /var/log
 ```
 
-### Example Output:
+#### Example Output:
 
 ```bash
 [root@ip-172-31-84-123 bin]# ./splunk add monitor /var/log  
@@ -365,7 +366,7 @@ Added monitor of '/var/log'.
 
 ---
 
-## 5. Restart Splunk Again
+#### 5. Restart Splunk Again
 
 ```bash
 ./splunk restart
@@ -375,7 +376,7 @@ Added monitor of '/var/log'.
 
 ---
 
-## 6. Enable Listening on Port 9997
+#### 6. Enable Listening on Port 9997
 
 ```bash
 ./splunk enable listen 9997
@@ -392,120 +393,7 @@ Listening for Splunk data on TCP port 9997.
 
 ---
 
-## 7. Final Restart
-
-```bash
-./splunk restart
-```
-
----
-
----
-
-## 8. Login to Splunk Web Dashboard
-
-Open your browser and navigate to:
-
-👉 http://18.207.227.21:8000/en-US/app/launcher/home
-
-This takes you to the Splunk Dashboard.
-
-### Navigation Steps:
-
-- Go to ➡️ Splunk Dashboard  
-- Click on ➡️ Search & Reporting  
-- Then ➡️ Data Summary  
-- Choose ➡️ Source  
-- Select the desired log source to view logs
-
-
-# Splunk Universal Forwarder Setup Guide
-
-## 1. Navigate to Splunk's bin Directory
-
-```bash
-cd /opt/splunk/bin
-```
-
----
-
-## 2. Configure Forward Server
-
-Forward logs to a Splunk indexer by running:
-
-```bash
-./splunk add forward-server <SPLUNK_INDEXER_IP>:9997
-```
-
-### Example:
-
-```bash
-[root@ip-172-31-84-123 bin]# ./splunk add forward-server 18.207.227.21:9997
-Warning: Attempting to revert the SPLUNK_HOME ownership  
-Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
-Splunk username: admin  
-Password:  
-Added forwarding to: 18.207.227.21:9997.
-```
-
----
-
-## 3. Restart Splunk Forwarder
-
-```bash
-./splunk restart
-```
-
----
-
-## 4. Add Log Path to Monitor
-
-```bash
-./splunk add monitor /var/log
-```
-
-### Example Output:
-
-```bash
-[root@ip-172-31-84-123 bin]# ./splunk add monitor /var/log  
-Warning: Attempting to revert the SPLUNK_HOME ownership  
-Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
-Your session is invalid. Please login.  
-Splunk username: admin  
-Password:  
-Added monitor of '/var/log'.
-```
-
----
-
-## 5. Restart Splunk Again
-
-```bash
-./splunk restart
-```
-
-⚠️ **Important:** Always restart Splunk after configuration changes.
-
----
-
-## 6. Enable Listening on Port 9997
-
-```bash
-./splunk enable listen 9997
-```
-
-### Example Output:
-
-```bash
-[root@ip-172-31-84-123 bin]# ./splunk enable listen 9997  
-Warning: Attempting to revert the SPLUNK_HOME ownership  
-Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"  
-Listening for Splunk data on TCP port 9997.
-```
-
----
-
-## 7. Final Restart
+#### 7. Final Restart
 
 ```bash
 ./splunk restart
@@ -514,7 +402,7 @@ Listening for Splunk data on TCP port 9997.
 
 ---
 
-## 8. Login to Splunk Web Dashboard
+#### 8. Login to Splunk Web Dashboard
 
 Open your browser and navigate to:
 
@@ -533,9 +421,9 @@ This takes you to the Splunk Dashboard.
 
 ---
 
-## ✅ Step 9. Testing Method 1 – Using Apache httpd Logs
+## ✅ Step 8: Testing Method 1 – Using Apache httpd Logs
 
-### Step 1: SSH into the Splunk EC2 Instance
+#### Step 1: SSH into the Splunk EC2 Instance
 
 ```bash
 cd ~
@@ -545,7 +433,7 @@ sudo systemctl enable httpd
 echo "✅ Splunk forwarder is now configured to forward data" | sudo tee /var/www/html/index.html
 ```
 
-### Step 2: Verify in Splunk
+#### Step 2: Verify in Splunk
 
 - Open your browser and navigate to:  
   👉 http://18.207.227.21:8000/en-US/app/launcher/home
@@ -556,9 +444,9 @@ echo "✅ Splunk forwarder is now configured to forward data" | sudo tee /var/ww
 
 ---
 
-## 10. Testing Method 2 – Using Python Logging
+## ✅ Step 9: Testing Method 2 – Using Python Logging
 
-### Step 1: Create a Python Script
+#### Step 1: Create a Python Script
 
 Create a file named `test.py`:
 
@@ -586,7 +474,7 @@ Run the script:
 python3 test.py
 ```
 
-### Step 2: View in Splunk
+#### Step 2: View in Splunk
 
 - Go to ➡️ Splunk Dashboard  
 - Click ➡️ Search & Reporting → Data Summary → Source → `python_app.log`
@@ -595,9 +483,9 @@ python3 test.py
 
 ---
 
-## 11. Additional Python Log Test – Error Handling
+## ✅ Step 9: Additional Python Log Test – Error Handling
 
-### Step 1: Create another Python Script
+#### Step 1: Create another Python Script
 
 Create `app.py` with the following:
 
@@ -632,7 +520,7 @@ Run it:
 python3 app.py
 ```
 
-### Step 2: View Logs in Splunk
+#### Step 2: View Logs in Splunk
 
 - Go to ➡️ Splunk Dashboard  
 - Click ➡️ Search & Reporting → Data Summary → Source → `python_app.log`
