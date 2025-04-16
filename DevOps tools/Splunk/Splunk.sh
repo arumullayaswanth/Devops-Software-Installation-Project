@@ -29,3 +29,14 @@ echo "Login at http://localhost:8000 with username: $SPLUNK_USER and password: $
 
 # Enable Splunk to start automatically on system boot
 ./splunk enable boot-start
+
+
+echo -e "\n📊 Splunk Port Summary"
+echo "------------------------------------------"
+echo "🖥️  Web Interface (UI):        http://localhost:8000"
+echo "📡 Management Port (REST API): 8089"
+echo "📤 HTTP Event Collector (HEC): 8088"
+echo "📥 Indexing/Data Input:        9997"
+echo "------------------------------------------"
+echo "🔐 Login with -> Username: $SPLUNK_USER | Password: $SPLUNK_PASSWORD"
+
