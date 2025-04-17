@@ -1,5 +1,34 @@
 # 🚀 GitLab CI/CD for Terraform Project (Step-by-Step Guide)
 
+
+<table style="width: 100%; margin-bottom: 20px;">
+  <tr>
+    <td align="center" style="padding: 10px; background-color: #f4f4f9; border-radius: 8px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f83c8ab47e6fa9fc20ea3ef427c0600d7157bc38/Pictures/Gitlab%20architecture.png?raw=true" width="80%" style="border: 2px solid #ddd; border-radius: 10px;">
+      <br><b>GitLab Architecture</b>
+    </td>
+  </tr>
+</table>
+
+<table style="width: 100%; margin-bottom: 20px;">
+  <tr>
+    <td align="center" style="padding: 10px; background-color: #e9f7f5; border-radius: 8px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f83c8ab47e6fa9fc20ea3ef427c0600d7157bc38/Pictures/Gitlab%20architecture-1.png?raw=true" width="80%" style="border: 2px solid #ddd; border-radius: 10px;">
+      <br><b>GitLab Architecture (Part 2)</b>
+    </td>
+  </tr>
+</table>
+
+<table style="width: 100%; margin-bottom: 20px;">
+  <tr>
+    <td align="center" style="padding: 10px; background-color: #f9f9f9; border-radius: 8px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/f83c8ab47e6fa9fc20ea3ef427c0600d7157bc38/Pictures/gitlav%20vs%20jenkins.png?raw=true" width="80%" style="border: 2px solid #ddd; border-radius: 10px;">
+      <br><b>GitLab vs Jenkins</b>
+    </td>
+  </tr>
+</table>
+
+
 ---
 
 ## ✅ Step 1: Sign into GitLab using GitHub
