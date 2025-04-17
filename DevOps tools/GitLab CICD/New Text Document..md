@@ -27,7 +27,7 @@
 Open Command Prompt or Git Bash and run:
 
 ```bash
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen
 ```
 
 - Press Enter three times to accept the default options.
