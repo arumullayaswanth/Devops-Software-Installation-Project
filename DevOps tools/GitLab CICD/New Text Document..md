@@ -202,28 +202,3 @@ Click **Add variable** for each.
 
 ---
 
-## 🔁 GitLab Git Commands Quick Guide
-
-### 🔼 Push Code to GitLab:
-
-```bash
-git add .
-git commit -m "your message"
-git push
-```
-
-### 🔽 Pull Code from GitLab:
-
-```bash
-git pull
-```
-
-### 🔄 Clone GitLab Repository via SSH:
-
-```bash
-git clone git@gitlab.com:<your-username>/<your-repo>.git
-```
-
----
-
-🎉 You’ve successfully set up GitLab CI/CD with Terraform!
