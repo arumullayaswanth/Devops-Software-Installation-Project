@@ -112,6 +112,7 @@ resource "aws_s3_bucket" "example" {
 ### ✅ Git Commands to Push Your Code:
 ```bash
 git status
+git init
 git add .
 git status
 git commit -m "cicdproject"
