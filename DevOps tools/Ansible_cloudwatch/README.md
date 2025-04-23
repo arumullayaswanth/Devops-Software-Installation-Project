@@ -3,7 +3,7 @@
 <table style="width: 100%; margin-bottom: 20px;">
   <tr>
     <td align="center" style="padding: 10px; background-color: #e9f7f5; border-radius: 8px;">
-      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/13885500c69460a373d5eaf5bbc69f11c181932d/Pictures/Ansible%20cloudwatch%20architecture.png" width="1000%" style="border: 2px solid #ddd; border-radius: 10px;">
+      <img src="https://github.com/arumullayaswanth/Devops-Software-Installation-Project/blob/13885500c69460a373d5eaf5bbc69f11c181932d/Pictures/Ansible%20cloudwatch%20architecture.png" width="100%" style="border: 2px solid #ddd; border-radius: 10px;">
       <br><b>Centralised Log Management with Ansible and CloudWatch </b>
     </td>
   </tr>
