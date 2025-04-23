@@ -1,0 +1,46 @@
+- name: Setup Apache and CloudWatch on EC2  # Descriptive name for the playbook
+  hosts: all                                # Apply this playbook to all defined hosts
+  become: yes                               # Run tasks with sudo privileges
+  tasks:                                    # List of tasks to execute on each host
+
+    - name: Install CloudWatch Agent        # Task 1: Install the agent
+      yum:                                  # Use the 'yum' module to manage packages
+        name: amazon-cloudwatch-agent       # Name of the package to install
+        state: present                      # Ensure the package is installed
+
+    - name: Create CloudWatch agent config  # Task 2: Create agent configuration file
+      copy:                                 # Use the 'copy' module to write a file
+        dest: /opt/aws/amazon-cloudwatch-agent/bin/config.json  # File path on target host
+        content: |                          # Inline content of the config file
+          {
+            "logs": {
+              "logs_collected": {
+                "files": {
+                  "collect_list": [
+                    {
+                      "file_path": "/var/log/*",          # Logs to collect
+                      "log_group_name": "LOG-FROM-EC2",    # CloudWatch log group name
+                      "log_stream_name": "{instance_id}",  # Dynamic stream name using instance ID
+                      "retention_in_days": 1               # Retain logs in CloudWatch for 1 day
+                    }
+                  ]
+                }
+              }
+            }
+          }
+
+    - name: Start the CloudWatch agent       # Task 3: Start the agent with the config file
+      command: >                             # Use 'command' module to run a shell command
+        /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl 
+        -a fetch-config                      # Fetch configuration
+        -m ec2                               # Mode: EC2 instance
+        -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json  # Config file location
+        -s                                   # Start the agent
+
+    - name: Check CloudWatch agent status    # Task 4: Check status of the agent
+      command:                               # Run a shell command
+        /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status
+      register: cw_agent_status              # Save the command output in a variable
+
+    - debug:                                 # Task 5: Output the agent status
+        var: cw_agent_status.stdout_lines    # Print the status output line by line
