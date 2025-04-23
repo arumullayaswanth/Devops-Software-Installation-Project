@@ -121,4 +121,243 @@
 
 ---
 
+## ✅ Step 10: Connect to the Ansible Server Instance
+
+1. Go to the **Instances** page in the EC2 dashboard.
+2. Select the **Ansible server instance**.
+3. Click **Connect** → Choose **EC2 Instance Connect (Browser-based SSH)** or use your preferred method (e.g., SSH with .pem key).
+
+### Run the following commands:
+
+```bash
+sudo -i
+```
+```bash
+hostnamectl set-hostname Ansible-server
+```
+```bash
+sudo -i
+```
+```bash
+passwd root     
+```
+***Set your password to: 523182***
+
+```bash
+vim /etc/ssh/sshd_config
+```
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+
+```bash
+systemctl restart sshd
+```
+```bash
+systemctl status sshd
+```
+
+
+---
+
+## ✅ Step 11: Connect to the dev-1 Instance
+
+### Run the following commands:
+
+```bash
+sudo -i
+```
+```bash
+hostnamectl set-hostname dev-1
+```
+```bash
+sudo -i
+```
+```bash
+passwd root     
+```
+***Set your password to: 523182***
+
+```bash
+vim /etc/ssh/sshd_config
+```
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+
+```bash
+systemctl restart sshd
+```
+```bash
+systemctl status sshd
+```
+
+---
+
+## ✅ Step 12: Connect to the dev-2 Instance
+
+### Run the following commands:
+
+```bash
+sudo -i
+```
+```bash
+hostnamectl set-hostname dev-2
+```
+```bash
+sudo -i
+```
+```bash
+passwd root     
+```
+***Set your password to: 523182***
+
+```bash
+vim /etc/ssh/sshd_config
+```
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+
+```bash
+systemctl restart sshd
+```
+```bash
+systemctl status sshd
+```
+
+---
+
+## ✅ Step 13: Connect to the dev-3 Instance
+
+### Run the following commands:
+
+```bash
+sudo -i
+```
+```bash
+hostnamectl set-hostname dev-3
+```
+```bash
+sudo -i
+```
+```bash
+passwd root     
+```
+***Set your password to: 523182***
+
+```bash
+vim /etc/ssh/sshd_config
+```
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+
+```bash
+systemctl restart sshd
+```
+```bash
+systemctl status sshd
+```
+
+---
+
+## ✅ Step 14: Connect to the test-1 Instance
+
+### Run the following commands:
+
+```bash
+sudo -i
+```
+```bash
+hostnamectl set-hostname test-1
+```
+```bash
+sudo -i
+```
+```bash
+passwd root     
+```
+***Set your password to: 523182***
+
+```bash
+vim /etc/ssh/sshd_config
+```
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+
+```bash
+systemctl restart sshd
+```
+```bash
+systemctl status sshd
+```
+
+---
+
+## ✅ Step 15: Connect to the test-2 Instance
+
+### Run the following commands:
+
+```bash
+sudo -i
+```
+```bash
+hostnamectl set-hostname test-2
+```
+```bash
+sudo -i
+```
+```bash
+passwd root     
+```
+***Set your password to: 523182***
+
+```bash
+vim /etc/ssh/sshd_config
+```
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+
+```bash
+systemctl restart sshd
+```
+```bash
+systemctl status sshd
+```
+
+---
+
+## ✅ Step 16: Connect to the test-3 Instance
+
+### Run the following commands:
+
+```bash
+sudo -i
+```
+```bash
+hostnamectl set-hostname test-3
+```
+```bash
+sudo -i
+```
+```bash
+passwd root     
+```
+***Set your password to: 523182***
+
+```bash
+vim /etc/ssh/sshd_config
+```
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+
+```bash
+systemctl restart sshd
+```
+```bash
+systemctl status sshd
+```
+
+---
+
+
+
+
 
