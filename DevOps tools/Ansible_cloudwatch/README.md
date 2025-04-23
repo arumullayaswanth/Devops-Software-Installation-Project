@@ -180,8 +180,8 @@ passwd root
 ```bash
 vim /etc/ssh/sshd_config
 ```
- ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
- Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )                                          
+   Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
 
 ```bash
 systemctl restart sshd
@@ -213,8 +213,8 @@ passwd root
 ```bash
 vim /etc/ssh/sshd_config
 ```
- ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
- Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )                                          
+    Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
 
 ```bash
 systemctl restart sshd
@@ -246,8 +246,8 @@ passwd root
 ```bash
 vim /etc/ssh/sshd_config
 ```
- ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
- Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )                                          
+     Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
 
 ```bash
 systemctl restart sshd
@@ -279,8 +279,8 @@ passwd root
 ```bash
 vim /etc/ssh/sshd_config
 ```
- ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
- Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )                                          
+   Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
 
 ```bash
 systemctl restart sshd
@@ -312,7 +312,7 @@ passwd root
 ```bash
 vim /etc/ssh/sshd_config
 ```
- ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )                                          
  Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
 
 ```bash
@@ -345,8 +345,8 @@ passwd root
 ```bash
 vim /etc/ssh/sshd_config
 ```
- ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )
- Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
+ ***Go to line 38 and uncomment: like thiis ( PermitRootLogin yes )                                          
+  Go to line 63 and replace no with yes: like this (PasswordAuthentication yes )***
 
 ```bash
 systemctl restart sshd
