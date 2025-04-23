@@ -1,3 +1,4 @@
+---
 - name: Setup Apache and CloudWatch on EC2  # Descriptive name for the playbook
   hosts: all                                # Apply this playbook to all defined hosts
   become: yes                               # Run tasks with sudo privileges
