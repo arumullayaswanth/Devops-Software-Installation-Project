@@ -1,1 +1,95 @@
+- name: Fully Remove CloudWatch Agent and Logs
+  hosts: all
+  become: yes
+  vars:
+    aws_access_key: "AKIAWEPTQNTV6LUX6"  # AWS Access Key for API access
+    aws_secret_key: "WuTb9kYrdGsywNkVpF1sEh5IrRWan+p"  # AWS Secret Key for API access
+    aws_region: "us-east-1"  # AWS region where the EC2 instance and log group are located
+    log_group_name: "LOG-FROM-EC2"  # CloudWatch Log Group name to be removed
 
+  tasks:
+
+    - name: Stop CloudWatch Agent (ignore if already stopped)
+      command: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a stop
+      ignore_errors: yes
+      # Stops the CloudWatch agent if it's running. Ignores any errors if the agent is already stopped.
+
+    - name: Uninstall CloudWatch Agent
+      yum:
+        name: amazon-cloudwatch-agent
+        state: absent
+      # Uninstalls the CloudWatch Agent package using the `yum` package manager.
+
+    - name: Delete CloudWatch Agent config file
+      file:
+        path: /opt/aws/amazon-cloudwatch-agent/bin/config.json
+        state: absent
+      # Deletes the CloudWatch Agent configuration file located at /opt/aws/amazon-cloudwatch-agent/bin/config.json.
+
+    - name: Delete CloudWatch Agent directory
+      file:
+        path: /opt/aws/amazon-cloudwatch-agent
+        state: absent
+      # Removes the entire directory of the CloudWatch Agent, including its binary and config files.
+
+    - name: Verify CloudWatch Agent removal (Process check)
+      command: pgrep -f amazon-cloudwatch-agent || true
+      register: cloudwatch_agent_process
+      ignore_errors: yes
+      # Uses `pgrep` to search for the CloudWatch Agent process. If it's still running, the task registers the process output.
+      # The `true` command ensures that the task doesn't fail if `pgrep` returns no result (i.e., the process isn't running).
+
+    - name: Ensure CloudWatch agent is removed
+      debug:
+        msg: "CloudWatch agent process is not running"
+      when: cloudwatch_agent_process.rc != 0
+      # If the CloudWatch agent process isn't found (rc != 0), the debug message is shown, confirming the removal.
+
+- name: Delete CloudWatch Log Group from AWS
+  hosts: localhost
+  gather_facts: no
+  vars:
+    aws_access_key: "AKIAWEPTQUX6"  # AWS Access Key for API access
+    aws_secret_key: "WuTb9kYrdZdzRyu1sEh5IrRWan+p"  # AWS Secret Key for API access
+    aws_region: "us-east-1"  # AWS region where the log group is located
+    log_group_name: "LOG-FROM-EC2"  # CloudWatch Log Group name to be deleted
+
+  tasks:
+    - name: Delete log group from CloudWatch Logs
+      shell: >
+        aws logs delete-log-group
+        --log-group-name "{{ log_group_name }}"
+      environment:
+        AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
+        AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
+        AWS_DEFAULT_REGION: "{{ aws_region }}"
+      # Deletes the CloudWatch log group using the AWS CLI's `delete-log-group` command.
+      # The AWS credentials and region are passed through environment variables.
+
+- name: Verify CloudWatch Log Group Deletion
+  hosts: localhost
+  gather_facts: no
+  vars:
+    aws_access_key: "AKIAWEPTQNTBAJV6LUX6"  # AWS Access Key for API access
+    aws_secret_key: "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"  # AWS Secret Key for API access
+    aws_region: "us-east-1"  # AWS region where the log group is located
+    log_group_name: "LOG-FROM-EC2"  # CloudWatch Log Group name to verify
+
+  tasks:
+    - name: Verify if log group exists after deletion attempt
+      shell: >
+        aws logs describe-log-groups
+        --log-group-name-prefix "{{ log_group_name }}"
+      register: log_groups
+      environment:
+        AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
+        AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
+        AWS_DEFAULT_REGION: "{{ aws_region }}"
+      # Uses `aws logs describe-log-groups` to check if the CloudWatch log group still exists after deletion.
+      # The log group name is prefixed with the provided log group name.
+      # The result is saved in `log_groups`.
+
+    - name: Debug result of log group check
+      debug:
+        msg: "{{ log_groups.stdout }}"
+      # Outputs the result of the log group check. This will show the details of any log groups found that match the prefix.
