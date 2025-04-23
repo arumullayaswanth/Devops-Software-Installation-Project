@@ -474,14 +474,17 @@ If everything is set up correctly, you should see a success message (pong) from 
 
 ---
 
+# 🛠️ Project: CloudWatch Agent Setup via Ansible
+ This project demonstrates how to install and configure the Amazon CloudWatch Agent across multiple EC2 instances using Ansible.
 
+
+## ✅ Step 18: Deploy CloudWatch Agent Using Ansible
 
 # ✅ Step 18: Create and Run Ansible Playbook for CloudWatch
 
 ```bash
 vim cloudwatch_ansible.yml
 ```
-
 Then run the playbook:
 
 ```bash
