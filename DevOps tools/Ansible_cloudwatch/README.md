@@ -358,6 +358,122 @@ systemctl status sshd
 ---
 
 
+# ✅ Step 17: Connect to the Ansible Server Instance and Set Up Ansible
+
+## 🔧 Install Ansible on Amazon Linux 2
+
+```bash
+sudo amazon-linux-extras enable ansible2
+```
+```bash
+sudo yum install ansible -y
+```
+```bash
+amazon-linux-extras install ansible2 -y
+```
+```bash
+yum install python python-pip python-devel -y
+```
+
+## 📝 Configure Ansible Inventory
+
+Edit the Ansible hosts file:
+
+```bash
+vim /etc/ansible/hosts
+```
+
+Go to line number 12 and add the following:
+
+```ini
+# Ex 1: Ungrouped hosts, specify before any group headers.
+[dev]
+#dev-1
+172.31.87.237
+#dev-2
+172.31.92.155
+#dev-3
+172.31.88.185
+
+[test]
+#test-1
+172.31.82.201
+#test-2
+172.31.91.131
+#test-3
+172.31.93.147
+```
+
+## 🔑 Generate SSH Key
+
+```bash
+ssh-keygen
+```
+> Press Enter 4 times to accept the default options.
+
+## 📤 Copy SSH Key to All Nodes
+
+***dev-1***
+```bash
+ssh-copy-id root@172.31.87.237
+# type: yes, password: 523182
+ssh 172.31.87.237
+# logout
+ctrl+d
+```
+***dev-2***
+```bash
+ssh-copy-id root@172.31.88.185
+# type: yes, password: 523182
+ssh 172.31.88.185
+# logout
+ctrl+d
+```
+***dev-3***
+```bash
+ssh-copy-id root@172.31.92.155
+# type: yes, password: 523182
+ssh 172.31.92.155
+# logout
+ctrl+d
+```
+***test-1***
+```bash
+ssh-copy-id root@172.31.82.201
+# type: yes, password: 523182
+ssh 172.31.82.201
+# logout
+ctrl+d
+```
+***test-2***
+```bash
+ssh-copy-id root@172.31.91.131
+# type: yes, password: 523182
+ssh 172.31.91.131
+# logout
+ctrl+d
+```
+***test-3***
+```bash
+ssh-copy-id root@172.31.93.147
+# type: yes, password: 523182
+ssh 172.31.93.147
+# logout
+ctrl+d
+```
+
+## ✅ Verify Ansible Setup
+
+Run the following command:
+
+```bash
+ansible all -m ping
+```
+
+If everything is set up correctly, you should see a success message (pong) from all your nodes.
+
+---
+
 
 
 
