@@ -19,10 +19,10 @@
                 "files": {
                   "collect_list": [
                     {
-                      "file_path": "/var/log/*",          # Logs to collect
-                      "log_group_name": "LOG-FROM-EC2",    # CloudWatch log group name
-                      "log_stream_name": "{instance_id}",  # Dynamic stream name using instance ID
-                      "retention_in_days": 1               # Retain logs in CloudWatch for 1 day
+                      "file_path": "/var/log/*",
+                      "log_group_name": "LOG-FROM-EC2",
+                      "log_stream_name": "{instance_id}",
+                      "retention_in_days": 1
                     }
                   ]
                 }
@@ -31,12 +31,12 @@
           }
 
     - name: Start the CloudWatch agent       # Task 3: Start the agent with the config file
-      command: >                             # Use 'command' module to run a shell command
-        /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl 
-        -a fetch-config                      # Fetch configuration
-        -m ec2                               # Mode: EC2 instance
-        -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json  # Config file location
-        -s                                   # Start the agent
+      command: >
+        /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl
+        -a fetch-config
+        -m ec2
+        -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
+        -s
 
     - name: Check CloudWatch agent status    # Task 4: Check status of the agent
       command:                               # Run a shell command
@@ -45,3 +45,4 @@
 
     - debug:                                 # Task 5: Output the agent status
         var: cw_agent_status.stdout_lines    # Print the status output line by line
+
