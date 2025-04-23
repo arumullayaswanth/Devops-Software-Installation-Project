@@ -476,4 +476,42 @@ If everything is set up correctly, you should see a success message (pong) from 
 
 
 
+# ✅ Step 18: Create and Run Ansible Playbook for CloudWatch
+
+```bash
+vim cloudwatch_ansible.yml
+```
+
+Then run the playbook:
+
+```bash
+ansible-playbook cloudwatch_ansible.yml
+```
+
+---
+
+# ✅ Step 19: Verify CloudWatch Logs in AWS Console
+
+1. Go to the **AWS Console**.
+2. Search for **CloudWatch** (Monitor Resources and Applications).
+3. Navigate to **Logs** → **Log groups**.
+4. Search for your log group (e.g., `LOG-FROM-EC2`) to verify logs are being received.
+
+---
+
+# ✅ Step 20: Delete CloudWatch Configuration via Ansible
+
+```bash
+vim delete-cloudwatch_ansible.yml
+```
+
+Then run the playbook to delete:
+
+```bash
+ansible-playbook delete-cloudwatch_ansible.yml
+```
+
+
+
+
 
