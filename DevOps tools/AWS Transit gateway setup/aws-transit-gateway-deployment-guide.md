@@ -98,7 +98,7 @@ Imagine you have a large-scale deployment with dozens or even hundreds of VPCs a
 ## Step 3: Create Transit Gateway Subnets in VPC A
 
 Transit Gateway attachments require a dedicated /28 subnet in each Availability Zone.
-- ***Attach VPCs to Transit Gateway : *** The best practice for connecting VPCs to Transit Gateway is to use a dedicated /28 subnet in each availability zone and the CloudFormation run earlier created these for VPC B and VPC C alongside two private and public /24 subnets for hosting workloads. Therefore before we create the transit gateway we need to add a dedicated /28 subnet in each availability zone in VPC A for the transit gateway attachments.
+- ***Attach VPCs to Transit Gateway :*** The best practice for connecting VPCs to Transit Gateway is to use a dedicated /28 subnet in each availability zone and the CloudFormation run earlier created these for VPC B and VPC C alongside two private and public /24 subnets for hosting workloads. Therefore before we create the transit gateway we need to add a dedicated /28 subnet in each availability zone in VPC A for the transit gateway attachments.
 
 1. In the **VPC Dashboard**, select **"Subnets"**.
 2. Click on **"Create Subnet"**.
